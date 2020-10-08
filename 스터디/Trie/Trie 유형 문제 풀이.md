@@ -62,3 +62,60 @@ for _ in range(M):
 print(cnt)
 ```
 
+
+
+## 백준 5052번
+
+```python
+import collections
+
+
+class TrieNode:
+    def __init__(self):
+        self.child = collections.defaultdict(TrieNode)
+        self.word = False
+
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+
+    def insert(self, word: str) -> None:
+        node = self.root
+        for ch in word:
+            node = node.child[ch]
+        node.word = True
+
+    def startwith(self, word: str) -> bool:
+        node = self.root
+        for ch in word:
+            if node.word:
+                return True
+            node = node.child[ch]
+        return False
+
+
+def check(trie, lst):
+    for i in lst:
+        if trie.startwith(i):
+            return 0
+    return 1
+
+
+import sys
+input = sys.stdin.readline
+N = int(input().strip())
+for _ in range(N):
+    M = int(input().strip())
+    lst = []
+    trie = Trie()
+    for _ in range(M):
+        x = input().strip()
+        lst.append(x)
+        trie.insert(x)
+    if check(trie, lst):
+        print('YES')
+    else:
+        print('NO')
+```
+
