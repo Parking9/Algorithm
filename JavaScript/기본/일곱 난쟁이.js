@@ -8,12 +8,18 @@ function solution(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
         for (let j = i + 1; j < arr.length; j++) {
             if (arr[i] + arr[j] == diff) {
-                answer.push([i, j]);
+                if (i < j) {
+                    arr.splice(j, 1);
+                    arr.splice(i, 1);
+                    return arr;
+                } else {
+                    arr.splice(i, 1);
+                    arr.splice(j, 1);
+                    return arr;
+                }
             }
         }
     }
-    console.log(answer);
-    return answer;
 }
 let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
 console.log(solution(arr));
