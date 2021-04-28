@@ -44,3 +44,14 @@ console.log(n)
 // 6
 ```
 
+
+
+- str.toUpperCase()  ==> str의 대문자를 리턴함
+- [ASCII Code] x.charCodeAt() ==> ASCII CODE 리턴
+
+- [ASCII code to string]          String.fromCharCode(num) 
+- string.substring(startidx, endidx+1)  
+  - 시작인덱스~끝인덱스-1 까지의 문자열 리턴
+- string.substr(startidx, 갯수) 
+  - 시작인덱스에서 갯수 만큼 문자열 리턴
+
