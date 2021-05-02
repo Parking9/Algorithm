@@ -4,9 +4,6 @@
 
 Array의 최솟값은 전개연산자를 활용 
 
-```javascript
-Math.min(...arr)
-```
 
 
 
@@ -46,12 +43,45 @@ console.log(n)
 
 
 
-- str.toUpperCase()  ==> str의 대문자를 리턴함
-- [ASCII Code] x.charCodeAt() ==> ASCII CODE 리턴
+- `str.toUpperCase()` 
+  - str의 대문자를 리턴함
 
-- [ASCII code to string]          String.fromCharCode(num) 
-- string.substring(startidx, endidx+1)  
+
+
+-  `x.charCodeAt()`
+  - ASCII CODE 리턴
+
+
+
+-  `String.fromCharCode(num)` 
+  - ASCII code to string
+
+
+
+- `string.substring(startidx, endidx+1)`  
   - 시작인덱스~끝인덱스-1 까지의 문자열 리턴
-- string.substr(startidx, 갯수) 
+
+
+
+- `string.substr(startidx, 갯수)` 
   - 시작인덱스에서 갯수 만큼 문자열 리턴
 
+
+
+- Array의 특정 위치에 원소 삽입 `arr.splice(idx,0,value)`
+  - idx = 원하는 인덱스
+
+
+
+- Array의 인덱싱 (python의 arr[ to :  from]) `arr.slice(a,b)`
+  - a는 시작 인덱스, b는 끝+1 인덱스 없으면 a부터 끝까지
+
+
+
+- Array Deep Copy `JSON.parse(JSON.stringify(arr))`
+  - arr.slice(0)은 shallow copy임.
+
+
+
+- 원하는 길이 만큼의 Array 생성. `Array.from({length : n}, (value,idx)=> {})`
+  - n : 길이, value : undefined, idx = 인덱스
