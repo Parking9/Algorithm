@@ -58,12 +58,12 @@ console.log(n)
 
 
 
-- `string.substring(startidx, endidx+1)`  
+- `str.substring(startidx, endidx+1)`  
   - 시작인덱스~끝인덱스-1 까지의 문자열 리턴
 
 
 
-- `string.substr(startidx, 갯수)` 
+- `str.substr(startidx, 갯수)` 
   - 시작인덱스에서 갯수 만큼 문자열 리턴
 
 
@@ -85,3 +85,15 @@ console.log(n)
 
 - 원하는 길이 만큼의 Array 생성. `Array.from({length : n}, (value,idx)=> {})`
   - n : 길이, value : undefined, idx = 인덱스
+
+
+
+- 문자열을 배열로 `string.split('')`
+- 배열을 거꾸로 `arr.reverse()`
+- 배열을 문자열로 `arr.join('')`
+
+
+
+- 숫자형임을 판별하는 메서드 `isNaN(x)` 
+  - isNotANumber로 false면 숫자형이고, true면 숫자형이 아니다 
+
