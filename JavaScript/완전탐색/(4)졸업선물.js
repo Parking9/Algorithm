@@ -4,15 +4,15 @@ function solution(N, arr) {
     for (let i = 0; i < arr.length; i++) {
         let sum = N - (Math.floor(arr[i][0] / 2) + arr[i][1]);
         let cnt = 1;
+        console.log(...arr);
         let temp = arr.filter((v, index) => {
             return index != i;
         });
-        console.log(...temp);
+        temp = temp.map((t) => {
+            return t[0] + t[1];
+        });
         temp = temp.sort(function (a, b) {
-            return (
-                a.reduce((curr, acc) => acc + curr, 0) -
-                b.reduce((curr, acc) => acc + curr, 0)
-            );
+            return a - b;
         });
         // console.log(...temp);
         for (let i of temp) {
@@ -20,7 +20,7 @@ function solution(N, arr) {
             if (sum >= 0) {
                 cnt += 1;
             } else {
-                continue;
+                break;
             }
         }
         if (cnt >= answer) {

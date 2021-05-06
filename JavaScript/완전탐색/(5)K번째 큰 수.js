@@ -16,23 +16,22 @@
 // }
 
 function solution(N, K, arr) {
-    let answer = [];
+    let answer = new Set();
     let idx = Array.from({ length: N }, (v, idx) => idx);
-    for (let i = 0; i < N; i++) {
+    for (let i of idx) {
         let idx2 = idx.filter((v, index) => {
-            return index != i;
+            return v != i;
         });
-        for (j of idx2) {
+        for (let j of idx2) {
             let idx3 = idx2.filter((v, index) => {
-                return index != j;
+                return v != j;
             });
-            for (k of idx3) {
-                answer.push(arr[i] + arr[j] + arr[k]);
+            for (let k of idx3) {
+                answer.add(arr[i] + arr[j] + arr[k]);
             }
         }
     }
-    answer = Array.from(new Set(answer.sort((a, b) => b - a)));
-    console.log(answer);
+    answer = Array.from(answer).sort((a, b) => b - a);
     return answer[K - 1];
 }
 let arr = [13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
