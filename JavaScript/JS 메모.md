@@ -97,3 +97,19 @@ console.log(n)
 - 숫자형임을 판별하는 메서드 `isNaN(x)` 
   - isNotANumber로 false면 숫자형이고, true면 숫자형이 아니다 
 
+
+
+- 정렬 ==> `arr.sort(cbfunc)`
+  - (a,b)=> a-b 는 오름차순, b-a는 내림차순
+
+
+
+- arr 중복 제거  `new Set(arr)`
+  - 가장 성능이 괜찮다.
+
+
+
+- 
+
+
+
