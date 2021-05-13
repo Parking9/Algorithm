@@ -109,7 +109,11 @@ console.log(n)
 
 
 
-- 
+- Map 자료구조 (dictionary) 
+  - map.has(x) ==> x라는 key를 가지고있나
+  - map.get(x) ==> key x 의 value 리턴
+  - map.set(key,value) ==> key와 이에 따른 value 를 Map에 삽입
+  - for(let [key, value] of map)  문으로 반복가능
 
 
 
