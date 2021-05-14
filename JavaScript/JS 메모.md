@@ -114,6 +114,10 @@ console.log(n)
   - map.get(x) ==> key x 의 value 리턴
   - map.set(key,value) ==> key와 이에 따른 value 를 Map에 삽입
   - for(let [key, value] of map)  문으로 반복가능
+  - map.size() ==> length 리턴
+  - map.forEach((value, key) => console.log(value,key)) ==> map 순회하면서 콜백함수 실행
+
+
 
 
 
