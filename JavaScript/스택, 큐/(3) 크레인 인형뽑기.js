@@ -14,11 +14,11 @@ function solution(board, moves) {
         }
         if (picked != 0) {
             if (stack[stack.length - 1] === picked) {
-                stack.pop();
-                answer += 2;
+                stack.pop()
+                answer += 2
             } else {
-                stack.push(picked);
-            }
+                stack.push(picked)
+            } 
         }
     }
 
