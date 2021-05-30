@@ -121,3 +121,6 @@ console.log(n)
 
 
 
+- 배열에서 특정 index끼리 value를 바꾸는 로직
+  - [arr[i], arr[j]] = [arr[j], arr[i]]
+  - 파이썬과 동일, 최신 자바스크립트에서 도입됨.
