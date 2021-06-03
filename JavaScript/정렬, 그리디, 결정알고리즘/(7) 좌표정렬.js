@@ -1,15 +1,22 @@
 function solution(arr) {
+  // arr.sort((a, b) => {
+  //   if (a[0] < b[0]) {
+  //     return -1;
+  //   } else if (a[0] === b[0]) {
+  //     if (a[1] < b[1]) {
+  //       return -1;
+  //     } else {
+  //       return 1;
+  //     }
+  //   } else {
+  //     return 1;
+  //   }
+  // });
   arr.sort((a, b) => {
-    if (a[0] < b[0]) {
-      return -1;
-    } else if (a[0] === b[0]) {
-      if (a[1] < b[1]) {
-        return -1;
-      } else {
-        return 1;
-      }
+    if (a[0] === b[0]) {
+      return a[1] - b[1];
     } else {
-      return 1;
+      return a[0] - b[0];
     }
   });
   return arr;
