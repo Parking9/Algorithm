@@ -1,25 +1,23 @@
 function solution(n) {
   let answer = [];
-  let check = Array.from({ length: n + 1 }, () => 0);
-  const dfs = function (L) {
-    if (L === n + 1) {
+  let visited = Array.from({ length: n + 1 }, () => 0);
+  function dfs(i) {
+    if (i === n + 1) {
       let temp = [];
-      for (let i = 1; i < n + 1; i++) {
-        if (check[i] === 1) {
-          temp.push(i);
+      for (let j = 1; j < n + 1; j++) {
+        if (visited[j] === 1) {
+          temp.push(j);
         }
       }
-      if (temp.length !== 0) {
-        answer.push(temp);
-      }
+      answer.push(temp);
       return;
     } else {
-      check[L] = 1;
-      dfs(L + 1);
-      check[L] = 0;
-      dfs(L + 1);
+      visited[i] = 1;
+      dfs(i + 1);
+      visited[i] = 0;
+      dfs(i + 1);
     }
-  };
+  }
   dfs(1);
   return answer;
 }
