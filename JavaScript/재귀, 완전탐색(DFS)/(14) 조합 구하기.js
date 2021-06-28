@@ -1,18 +1,17 @@
 function solution(n, m) {
-  let answer = [],
-    arr = Array.from({ length: n }, (a, b) => b + 1),
-    temp = Array.from({ length: m }, () => 0);
-  const dfs = function (L, v) {
-    if (L === m) {
-      answer.push(JSON.parse(JSON.stringify(temp)));
+  let answer = [];
+  let temp = Array.from({ length: m }, () => 0);
+  function dfs(i, s) {
+    if (i === m) {
+      answer.push(temp.slice());
     } else {
-      for (let i = v; i < n; i++) {
-        temp[L] = arr[i];
-        dfs(L + 1, i + 1);
+      for (let k = s; k <= n; k++) {
+        temp[i] = k;
+        dfs(i + 1, k + 1);
       }
     }
-  };
-  dfs(0, 0);
+  }
+  dfs(0, 1);
   return answer;
 }
 console.log(solution(4, 2));
